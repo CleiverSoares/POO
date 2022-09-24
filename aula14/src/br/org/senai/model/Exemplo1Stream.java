@@ -1,0 +1,21 @@
+package br.org.senai.model;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Exemplo1Stream {
+
+	public static void main(String[] args) {
+		List<String> times = Arrays.asList("Flamengão malvadão", "Flubosta", "vasnada", "tomebot");
+		times.forEach(t -> System.out.println(t));
+		
+		//times.stream().map(t -> t.substring(0,3)).forEach(t->System.out.println(t));
+		
+		List<String> timesAbreviados = times.stream().map(t -> t.substring(0,3)).
+				collect(Collectors.toList());
+		timesAbreviados.forEach(t->System.out.println(t));
+
+	
+	}
+}
